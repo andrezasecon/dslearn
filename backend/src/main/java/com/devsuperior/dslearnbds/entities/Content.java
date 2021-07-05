@@ -8,25 +8,25 @@ import javax.persistence.Table;
 public class Content extends Lesson{
     private static final long SerialVersionUID = 1L;
 
-    private String textConten;
+    private String textContent;
     private String videoUri;
 
 
     public Content() {
     }
 
-    public Content(Long id, String title, Integer position, Section section, String textConten, String videoUri) {
+    public Content(Long id, String title, Integer position, Section section, String textContent, String videoUri) {
         super(id, title, position, section);
-        this.textConten = textConten;
+        this.textContent = textContent;
         this.videoUri = videoUri;
     }
 
     public String getTextConten() {
-        return textConten;
+        return textContent;
     }
 
     public void setTextConten(String textConten) {
-        this.textConten = textConten;
+        this.textContent = textConten;
     }
 
     public String getVideoUri() {
