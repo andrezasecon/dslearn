@@ -2,12 +2,11 @@ package com.devsuperior.dslearnbds.resources.exceptions;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.io.Serializable;
 
 public class OAuthCustomError implements Serializable {
-    private static final long SerialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private String error;
     @JsonProperty("error_description")

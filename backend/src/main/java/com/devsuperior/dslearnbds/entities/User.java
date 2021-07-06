@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @Entity
 @Table(name = "tb_user")
 public class User implements UserDetails, Serializable {
-    private static final long SerialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

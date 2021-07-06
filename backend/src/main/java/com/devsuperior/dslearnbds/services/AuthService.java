@@ -9,8 +9,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.Serializable;
+
 @Service
-public class AuthService {
+public class AuthService implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Autowired
     private UserRepository repository;

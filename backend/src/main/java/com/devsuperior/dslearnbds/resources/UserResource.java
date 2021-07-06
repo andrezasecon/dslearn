@@ -14,7 +14,7 @@ import java.io.Serializable;
 @RestController
 @RequestMapping(value = "/users")
 public class UserResource implements Serializable {
-    private static final long SerialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Autowired
     private UserService userService;

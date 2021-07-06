@@ -8,7 +8,7 @@ import java.util.*;
 @Table(name = "tb_lesson")
 @Inheritance(strategy = InheritanceType.JOINED) // mapeamento da super classe/herança cria as 3 tabelas Lesson, Content e Task
 public abstract class Lesson implements Serializable {
-    private static final long SerialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -19,7 +19,7 @@ import java.util.Optional;
 
 @Service
 public class UserService  implements UserDetailsService, Serializable {
-    private static final long SerialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private static Logger logger = LoggerFactory.getLogger(UserService.class);
 

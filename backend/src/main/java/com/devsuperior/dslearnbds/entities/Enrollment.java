@@ -3,12 +3,14 @@ package com.devsuperior.dslearnbds.entities;
 import com.devsuperior.dslearnbds.entities.pk.EnrollmentPK;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.*;
 
 @Entity
 @Table(name = "tb_enrollment")
-public class Enrollment {
+public class Enrollment implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @EmbeddedId
     private EnrollmentPK id = new EnrollmentPK();

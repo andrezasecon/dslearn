@@ -1,39 +1,39 @@
-package com.devsuperior.dslearnbds.entities;
+package com.devsuperior.dslearnbds.dto;
 
-import javax.persistence.*;
+import com.devsuperior.dslearnbds.entities.Notification;
+
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.Objects;
 
-@Entity
-@Table(name = "tb_notification")
-public class Notification implements Serializable {
+public class NotificationDTO implements Serializable {
     private static final long serialVersionUID = 1l;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String text;
-
-    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant moment;
     private Boolean read;
     private String route;
+    private Long userId;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    public Notification(){
+    public NotificationDTO() {
     }
 
-    public Notification(Long id, String text, Instant moment, Boolean read, String route, User user) {
+    public NotificationDTO(Long id, String text, Instant moment, Boolean read, String route, Long userId) {
         this.id = id;
         this.text = text;
         this.moment = moment;
         this.read = read;
         this.route = route;
-        this.user = user;
+        this.userId = userId;
+    }
+
+    public NotificationDTO(Notification entity) {
+        id = entity.getId();
+        text = entity.getText();
+        moment = entity.getMoment();
+        read = entity.getRead();
+        route = entity.getRoute();
+        userId = entity.getUser().getId();
     }
 
     public Long getId() {
@@ -76,24 +76,11 @@ public class Notification implements Serializable {
         this.route = route;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Notification that = (Notification) o;
-        return Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
