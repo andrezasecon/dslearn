@@ -122,4 +122,14 @@ public class User implements UserDetails, Serializable {
     public boolean isEnabled() {
         return true;
     }
+
+    // método que testa se o usuário possui um determinado role
+    public boolean hasHole(String roleName){
+        for (Role role : roles){
+            if(role.getAuthority().equals(roleName)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
